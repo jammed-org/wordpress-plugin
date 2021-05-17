@@ -1,0 +1,24 @@
+{
+	"name": "wp-jammed-bookings",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Jammed booking block within Wordpress",
+	"author": "Andy Callaghan",
+	"license": "Jammed copyright",
+	"keywords": [
+		"jammed",
+    "wordpress",
+		"bookings"
+	],
+	"main": "build/index.js",
+	"devDependencies": {
+		"@wordpress/scripts": "^9.0.0"
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"format:js": "wp-scripts format-js",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start"
+	}
+}
