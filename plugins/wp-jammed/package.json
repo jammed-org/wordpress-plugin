@@ -7,12 +7,12 @@
 	"license": "Jammed copyright",
 	"keywords": [
 		"jammed",
-    "wordpress",
+		"wordpress",
 		"bookings"
 	],
 	"main": "build/index.js",
 	"devDependencies": {
-		"@wordpress/scripts": "^9.0.0"
+		"@wordpress/scripts": "^18.1.0"
 	},
 	"scripts": {
 		"build": "wp-scripts build",
@@ -20,5 +20,8 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start"
+	},
+	"dependencies": {
+		"@wordpress/core-data": "^4.0.3"
 	}
 }

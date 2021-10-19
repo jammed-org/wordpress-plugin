@@ -1,29 +1,31 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
+import { useEntityProp } from '@wordpress/core-data';
 
-const blockStyle = {
+const editBlockStyle = {
 	backgroundColor: '#900',
 	color: '#fff',
 	padding: '20px',
 };
 
+const account = useEntityProp( 'root', 'general', 'jammed_account' );
+
 registerBlockType( 'wp-jammed/booking-block', {
 	title: __( 'Jammed Bookings', 'wp-jammed' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
-	example: {},
+
 	edit() {
 		return (
-			<div style={ blockStyle }>
-				Hello World, step 1 (from the editor).
+			<div style={ editBlockStyle }>
+				Jammed booking block
 			</div>
 		);
 	},
 	save() {
 		return (
-			<div style={ blockStyle }>
-				Hello World, step 1 (from the frontend).
-			</div>
+			<jammed-bookings account={ account }>
+			</jammed-bookings>
 		);
 	},
 } );
