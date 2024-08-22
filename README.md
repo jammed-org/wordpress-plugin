@@ -12,7 +12,13 @@ Uses Docker Compose to run wordpress in a container, maps the ./plugin directory
 # Running the stack
 
 1. `docker compose up`
-
-## Stopping the stack
-
 1. `docker compose down`
+
+## Development
+
+- `install asdf`
+- `asdf plugin-add nodejs`
+- `asdf plugin-add pnpm`
+- `cd plugin/wp-jammed`
+- `asdf install`
+- Run `pnpm run build` to build your JavaScript file. This will create a build directory with the compiled index.js file.

@@ -10,6 +10,8 @@ node_modules/
 
 .history/
 
+plugins/akismet/*
+plugins/hello.php
 
 .DS_Store
 .AppleDouble
