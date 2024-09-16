@@ -35,9 +35,21 @@ class Jammed_Booking_Widget
 
     public function enqueue_scripts()
     {
-        wp_enqueue_script('jammed-bookings', 'https://mini.jammedapp.com/jammed-bookings.min.js', array(), '1.0.0', true);
+        wp_enqueue_script(
+            'jammed-bookings',
+            'https://mini.jammedapp.com/jammed-bookings.min.js',
+            array(),
+            '1.0.0',
+            true // Load script in footer
+        );
         if (is_admin()) {
-            wp_enqueue_script('jammed-bookings-admin', 'https://mini.jammedapp.com/jammed-bookings.min.js', array(), '1.0.0', true);
+            wp_enqueue_script(
+                'jammed-bookings-admin',
+                'https://mini.jammedapp.com/jammed-bookings.min.js',
+                array(),
+                '1.0.0',
+                true // Load script in footer
+            );
         }
     }
 
@@ -89,7 +101,8 @@ class Jammed_Booking_Widget
             'jammed-booking-block-editor',
             plugins_url('build/index.js', __FILE__),
             array('wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-api-fetch'),
-            filemtime(plugin_dir_path(__FILE__) . 'build/index.js')
+            filemtime(plugin_dir_path(__FILE__) . 'build/index.js'),
+            true // Load script in footer
         );
 
         register_block_type('jammed-booking/widget', array(
