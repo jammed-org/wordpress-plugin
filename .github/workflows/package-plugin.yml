@@ -52,7 +52,7 @@ jobs:
           mkdir jammed-booking
           cp -r plugins/wp-jammed/build jammed-booking/
           cp plugins/wp-jammed/jammed-booking.php jammed-booking/
-          cp plugins/wp-jammed/readme.txt jammed-booking/
+          cp plugins/wp-jammed/README.txt jammed-booking/readme.txt
           cp -r plugins/wp-jammed/src jammed-booking/
           zip -r jammed-booking.zip jammed-booking
 
