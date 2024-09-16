@@ -3,7 +3,7 @@ Contributors: andycallaghan49
 Tags: jammed, booking, creative space, studio booking, booking app
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -34,6 +34,9 @@ To register for a new Jammed account, visit [Jammed](https://jammed.app).
 You can use the Gutenberg block 'Jammed Booking Widget' or the shortcode [jammed_booking].
 
 == Changelog ==
+= 1.0.3 =
+* Fixes to build process, updated plugin description
+
 = 1.0.2 =
 * Updated plugin description, plugin code feedback from Plugin check
 
