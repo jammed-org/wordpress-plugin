@@ -1,9 +1,6 @@
 name: Package WordPress Plugin
 
 on:
-  push:
-    branches:
-      - main
   release:
     types: [created]
 
