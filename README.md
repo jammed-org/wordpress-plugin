@@ -1,4 +1,4 @@
-# Jammed Wordpress plugin, dev instructions
+# Jammed plugin for Wordpress, dev instructions
 
 Uses Docker Compose to run wordpress in a container, maps the ./plugin directory into Wordpress
 

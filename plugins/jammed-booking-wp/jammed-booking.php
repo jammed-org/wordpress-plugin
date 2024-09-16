@@ -4,11 +4,12 @@
  * Plugin URI: https://jammed.app
  * Description: Easily add the Jammed booking widget to your WordPress site.
  * Version: 1.0.1
- * Author: Jammed Booking Ltd
+ * Author: Jammed Bookings Ltd
  * Author URI: https://jammed.app
  * License: GPL-3.0
- * License URI: https://opensource.org/licenses/GPL-3.0
- * Text Domain: wp-jammed
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ * Text Domain: jammed-booking-wp
+ * Domain Path: /languages
  */
 
 if (!defined('ABSPATH')) {
@@ -19,11 +20,17 @@ class Jammed_Booking_Widget
 {
     public function __construct()
     {
+        add_action('plugins_loaded', array($this, 'load_plugin_textdomain'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
         add_action('admin_init', array($this, 'register_settings'));
         add_action('admin_menu', array($this, 'add_settings_section'));
         add_action('init', array($this, 'register_gutenberg_block'));
         add_shortcode('jammed_booking', array($this, 'jammed_booking_shortcode'));
+    }
+
+    public function load_plugin_textdomain()
+    {
+        load_plugin_textdomain('jammed-booking-wp', false, dirname(plugin_basename(__FILE__)) . '/languages/');
     }
 
     public function enqueue_scripts()
@@ -63,7 +70,7 @@ class Jammed_Booking_Widget
 
     public function settings_section_callback()
     {
-        echo '<p>Enter your Jammed account subdomain below:</p>';
+        echo '<p>' . esc_html__('Enter your Jammed account subdomain below:', 'jammed-booking-wp') . '</p>';
     }
 
     public function account_subdomain_callback()
