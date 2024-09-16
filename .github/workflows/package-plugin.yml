@@ -37,11 +37,11 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        working-directory: ./plugins/wp-jammed
+        working-directory: ./plugins/jammed-booking-wp
         run: pnpm install
 
       - name: Build assets
-        working-directory: ./plugins/wp-jammed
+        working-directory: ./plugins/jammed-booking-wp
         run: pnpm run build
 
       - name: Create plugin artifact

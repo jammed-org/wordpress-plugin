@@ -19,11 +19,11 @@ Uses Docker Compose to run wordpress in a container, maps the ./plugin directory
 - `install asdf`
 - `asdf plugin-add nodejs`
 - `asdf plugin-add pnpm`
-- `cd plugin/wp-jammed`
+- `cd plugin/jammed-booking-wp`
 - `asdf install`
 - Run `pnpm run build` to build your JavaScript file. This will create a build directory with the compiled index.js file.
 
 ## Checking plugin
 
 - Install the WP CLI `brew install wp-cli`
-- Run the plugin check via root directory `wp plugin check plugins/wp-jammed`
+- Run the plugin check via root directory `wp plugin check plugins/jammed-booking-wp`
