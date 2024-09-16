@@ -3,7 +3,7 @@
  * Plugin Name: Jammed Booking Widget
  * Plugin URI: https://jammed.app
  * Description: Easily add the Jammed booking widget to your WordPress site.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Jammed Bookings Ltd
  * Author URI: https://jammed.app
  * License: GPL-3.0
