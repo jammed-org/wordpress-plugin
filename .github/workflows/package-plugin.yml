@@ -1,0 +1,74 @@
+name: Package WordPress Plugin
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Package Plugin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.32.9
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        working-directory: ./plugins/wp-jammed
+        run: pnpm install
+
+      - name: Build assets
+        working-directory: ./plugins/wp-jammed
+        run: pnpm run build
+
+      - name: Create plugin artifact
+        run: |
+          mkdir jammed-booking
+          cp -r plugins/wp-jammed/build jammed-booking/
+          cp plugins/wp-jammed/jammed-booking.php jammed-booking/
+          cp plugins/wp-jammed/readme.txt jammed-booking/
+          cp -r plugins/wp-jammed/src jammed-booking/
+          zip -r jammed-booking.zip jammed-booking
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: jammed-booking
+          path: jammed-booking.zip
+
+      - name: Upload to release
+        if: github.event_name == 'release'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./jammed-booking.zip
+          asset_name: jammed-booking.zip
+          asset_content_type: application/zip
