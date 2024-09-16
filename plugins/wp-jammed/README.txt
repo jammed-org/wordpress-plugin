@@ -1,10 +1,9 @@
 === Jammed Booking Widget ===
 Contributors: andycallaghan49
-Donate link: https://example.com/
 Tags: jammed, booking, creative space, studio booking, booking app
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -18,7 +17,7 @@ The Jammed Booking Widget plugin allows you to seamlessly integrate the Jammed b
 Use the Gutenberg block or shortcode to place the widget anywhere on your site.
 
 == Installation ==
-1. Upload the plugin files to the `/wp-content/plugins/jammed-booking` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/wp-jammed` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Use the Settings->General screen to configure the plugin, entering your Jammed account subdomain.
 
@@ -39,7 +38,6 @@ You can use the Gutenberg block 'Jammed Booking Widget' or the shortcode [jammed
 
 = 1.0.0 =
 * Initial release
-
 
 == Upgrade Notice ==
 = 1.0.0 =
