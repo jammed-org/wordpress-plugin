@@ -11,6 +11,7 @@ node_modules/
 .history/
 
 plugins/akismet/*
+plugins/plugin-check/*
 plugins/hello.php
 
 .DS_Store
