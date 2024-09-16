@@ -17,7 +17,7 @@ The Jammed Booking Widget plugin allows you to seamlessly integrate the Jammed b
 Use the Gutenberg block or shortcode to place the widget anywhere on your site.
 
 == Installation ==
-1. Upload the plugin files to the `/wp-content/plugins/wp-jammed` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/jammed-booking-wp` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Use the Settings->General screen to configure the plugin, entering your Jammed account subdomain.
 

@@ -47,10 +47,10 @@ jobs:
       - name: Create plugin artifact
         run: |
           mkdir jammed-booking
-          cp -r plugins/wp-jammed/build jammed-booking/
-          cp plugins/wp-jammed/jammed-booking.php jammed-booking/
-          cp plugins/wp-jammed/README.txt jammed-booking/readme.txt
-          cp -r plugins/wp-jammed/src jammed-booking/
+          cp -r plugins/jammed-booking-wp/build jammed-booking/
+          cp plugins/jammed-booking-wp/jammed-booking.php jammed-booking/
+          cp plugins/jammed-booking-wp/README.txt jammed-booking/readme.txt
+          cp -r plugins/jammed-booking-wp/src jammed-booking/
           zip -r jammed-booking.zip jammed-booking
 
       - name: Upload artifact
