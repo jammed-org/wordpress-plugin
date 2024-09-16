@@ -1,6 +1,9 @@
 name: Package WordPress Plugin
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [created]
 
@@ -49,7 +52,7 @@ jobs:
           mkdir jammed-booking
           cp -r plugins/jammed-booking-wp/build jammed-booking/
           cp plugins/jammed-booking-wp/jammed-booking.php jammed-booking/
-          cp plugins/jammed-booking-wp/README.txt jammed-booking/readme.txt
+          cp plugins/jammed-booking-wp/readme.txt jammed-booking/
           cp -r plugins/jammed-booking-wp/src jammed-booking/
           zip -r jammed-booking.zip jammed-booking
 
