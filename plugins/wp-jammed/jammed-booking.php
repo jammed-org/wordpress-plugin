@@ -69,7 +69,7 @@ class Jammed_Booking_Widget
     public function account_subdomain_callback()
     {
         $subdomain = get_option('jammed_account_subdomain');
-        echo "<input type='text' name='jammed_account_subdomain' value='$subdomain' />";
+        echo '<input type="text" name="jammed_account_subdomain" value="' . esc_attr($subdomain) . '" />';
     }
 
     public function register_gutenberg_block()
